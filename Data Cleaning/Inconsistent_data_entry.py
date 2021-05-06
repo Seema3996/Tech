@@ -45,8 +45,6 @@ def replace_matches_in_column(df, column, string_to_match, min_ratio = 47):
 replace_matches_in_column(df=professors, column='Country', string_to_match="south korea")
 countries = professors['Country'].unique()
 
-
-# TODO: Your code here
 # convert to lower case
 professors['Graduated from'] = professors['Graduated from'].str.lower()
 # remove trailing white spaces
