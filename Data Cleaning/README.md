@@ -17,3 +17,10 @@ The above python files describe basic processes involved in Data cleaning.
   2. boxcox
  
  Link to the dataset used: https://www.kaggle.com/kemical/kickstarter-projects
+
+"Parsing_dates.py" shows how to make Python recognize dates as composed of day, month and year. Starting with checking the data type of date column and converting it to datetime to displaying the days of dates and plottng it to check the date parsing.
+Link to the dataset used: https://www.kaggle.com/smithsonian/volcanic-eruptions to displaying 
+
+"Character_encoding.py" deals with avoiding UnicodeDecodeError while loading CSV files.
+
+"Inconsistent_data_entry.py" deals with fixing typos in the data. It begins with doing some text pre-processing and them using fuzzy matching to correct inconsistent data entry.
