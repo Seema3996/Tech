@@ -42,7 +42,6 @@ df = reviews.iloc[:100, cols_idx]
 italian_wines=reviews[reviews.country==Italy]
 
 # 9.Create a DataFrame top_oceania_wines containing all reviews with at least 95 points (out of 100) 
-#for wines from Australia or New Z
+#for wines from Australia or New Zealand
 top_oceania_wines = reviews.loc[(reviews.country.isin(['Australia', 'New Zealand']))& (reviews.points >= 95)]
 
-ealand.
