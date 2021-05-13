@@ -52,12 +52,20 @@ final_model.fit(X,y)
 
 #RandomForestRegressor
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_absolute_error
 
-forest_model = RandomForestRegressor(random_state=1)
-forest_model.fit(train_X, train_y)
-melb_preds = forest_model.predict(val_X)
-print(mean_absolute_error(val_y, melb_preds))
+# Define the model. Set random_state to 1
+rf_model = RandomForestRegressor()
+
+# fit your model
+rf_model.fit(train_X, train_y)
+
+# Calculate the mean absolute error of your Random Forest model on the validation data
+rf_val_predictions = rf_model.predict(val_X)
+rf_val_mae = mean_absolute_error(rf_val_predictions, val_y)
+
+print("Validation MAE for Random Forest Model: {}".format(rf_val_mae))
+
+
 
 
 
