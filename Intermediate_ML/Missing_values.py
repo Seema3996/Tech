@@ -37,12 +37,10 @@ print(missing_val_count_by_column[missing_val_count_by_column > 0])
 # Fill in the line below: How many rows are in the training data?
 num_rows = 1168
 
-# Fill in the line below: How many columns in the training data
-# have missing values?
+# Fill in the line below: How many columns in the training data have missing values?
 num_cols_with_missing = 3
 
-# Fill in the line below: How many missing entries are contained in 
-# all of the training data?
+# Fill in the line below: How many missing entries are contained in all of the training data?
 tot_missing = 212+6+58
 
 from sklearn.ensemble import RandomForestRegressor
@@ -54,10 +52,7 @@ def score_dataset(X_train, X_valid, y_train, y_valid):
     model.fit(X_train, y_train)
     preds = model.predict(X_valid)
     return mean_absolute_error(y_valid, preds)
-  
-  
-# Fill in the line below: get names of columns with missing values
-# Your code here
+ 
 cols_with_missing = [col for col in X_train.columns
                      if X_train[col].isnull().any()]
 
@@ -70,13 +65,12 @@ print(score_dataset(reduced_X_train, reduced_X_valid, y_train, y_valid))
 
 from sklearn.impute import SimpleImputer
 
-# Fill in the lines below: imputation
-# Your code here
+# imputation
 my_imputer = SimpleImputer()
 imputed_X_train = pd.DataFrame(my_imputer.fit_transform(X_train))
 imputed_X_valid = imputed_X_valid = pd.DataFrame(my_imputer.transform(X_valid))
 
-# Fill in the lines below: imputation removed column names; put them back
+# imputation removed column name
 imputed_X_train.columns = X_train.columns
 imputed_X_valid.columns = X_valid.columns
 
